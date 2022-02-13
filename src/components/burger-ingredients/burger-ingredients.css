@@ -1,0 +1,45 @@
+.burger-ingridients {
+    margin-left: 120px;
+}
+
+.burger-ingridients__tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.price-container {
+    width: 272px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-element {
+    width: 272px;
+    margin: 0;
+
+}
+
+.burger-element__name {
+    margin: 0;
+    width: 272px;
+    height: 48px;
+    text-align: center;
+}
+
+.burger-cards {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.burger-cards__name {
+    width: 600px;
+}
+
+.bugreg-cards__blocks{
+    height: 900px;
+    overflow-y: scroll;
+}
