@@ -6,25 +6,25 @@
     justify-content: center;
 }
 
-.header__buttons-container {
+.header__buttonsContainer {
     display: flex;
     flex-direction: row;
     margin-right: 112px;
 }
 
-.header__constructor-button {
+.header__constructorButton {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.header__list-button {
+.header__listButton {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.header__profile-button {
+.header__profileButton {
     display: flex;
     flex-direction: row;
     align-items: center;

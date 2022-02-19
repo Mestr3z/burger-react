@@ -1,24 +1,30 @@
-.ingridients-details__container{
+.ingridientsDetails__container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.ingridients-details__health-container {
+.ingridientsDetails__healthContainer {
     display: flex;
     flex-direction: row;
+
 }
 
-.ingridients-details__health{
+.ingridientsDetails__health{
     display: flex;
     align-items: center;
     flex-direction: column;
+    
 }
 
-.ingridients-details__health-count{
+/* .ingridients-details__health-count{
     margin:0;
 }
 
 .ingridients-details__health-name{
     margin-top:0;
+} */
+
+p { 
+    margin:0;
 }

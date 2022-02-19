@@ -1,25 +1,21 @@
 import React from "react";
-import "../../../node_modules/@ya.praktikum/react-developer-burger-ui-components/dist/ui/common.css";
-import "../../../node_modules/@ya.praktikum/react-developer-burger-ui-components/dist/ui/box.css";
-import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
-import "./burger-ingredients.css";
 import PropTypes from "prop-types";
-import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-
+import { CurrencyIcon, Tab } from "@ya.praktikum/react-developer-burger-ui-components";
+import S from "./burger-ingredients.module.css"
 BurgerIngredients.propTypes = {
-  buns: PropTypes.any,
-  sauce: PropTypes.any,
-  main: PropTypes.any,
-  card: PropTypes.any,
-  onCardClick: PropTypes.any,
+  buns: PropTypes.array,
+  sauce: PropTypes.array,
+  main: PropTypes.array,
+  card: PropTypes.object,
+  onCardClick: PropTypes.func,
 };
 
 function BurgerIngredients(props: any) {
   const [current, setCurrent] = React.useState("one");
   return (
-    <section className="burger-ingridients">
+    <section className={`${S.burgerIngridients}`}>
       <h2 className="text_type_main-large mt-10 mb-5">Соберите бургер</h2>
-      <div className="burger-ingridients__tabs">
+      <div className={`${S.burgerIngridients__tabs}`}>
         <Tab value="one" active={current === "one"} onClick={setCurrent}>
           Булки
         </Tab>
@@ -30,53 +26,53 @@ function BurgerIngredients(props: any) {
           Начинки
         </Tab>
       </div>
-      <div className="bugreg-cards__blocks custom-scroll ">
-        <h3 className="burger-cards__name burger-cards__name_buns text_type_main-medium mt-10 mb-6">
+      <div className={`${S.burgerCards__blocks}  custom-scroll`}>
+        <h3 className={`${S.burgerIngridients__name} text_type_main-medium mt-10 mb-6`}>
           Булки
         </h3>
-        <div className="burger-cards_buns burger-cards">
+        <div className={`${S.burgerCards}`}>
           {props.buns.map((card: any) => (
-            <div className="burger-element ml-4 mr-2 mt-6" onClick = {() => {props.onCardClick(card)}}>
-              <img className="ml-4" src={card.image} />
-              <div className="price-container mt-1 mb-1">
-                <p className="price-container__price text_type_digits-default mr-2">{card.price}</p>
+            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+              <img className="ml-4" src={card.image} alt = 'картинка' />
+              <div className={`${S.priceContainer} mt-1 mb-1`}>
+                <p className=" text_type_digits-default mr-2">{card.price}</p>
                 <CurrencyIcon type="primary" />
               </div>
-              <h3 className="burger-element__name text_type_main-default">
+              <h3 className={`${S.burgerElement__name} text_type_main-default`}>
                 {card.name}
               </h3>
             </div>
           ))}
         </div>
-        <h3 className="burger-cards__name burger-cards__name_sauce text_type_main-medium mt-10 mb-6">
+        <h3 className={`${S.burgerCards__name} text_type_main-medium mt-10 mb-6`}>
           Соусы
         </h3>
-        <div className="burger-cards_sauce burger-cards">
+        <div className={`${S.burgerCards}`}>
           {props.sauce.map((card: any) => (
-            <div className="burger-element  ml-4 mr-2 mt-6 " onClick = {() => {props.onCardClick(card)}}>
-              <img className="ml-4" src={card.image} />
-              <div className="price-container mt-1 mb-1">
-                <p className="price-container__price mr-2 text_type_digits-default">{card.price}</p>
+            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+              <img className="ml-4" src={card.image} alt = 'картинка'/>
+              <div className={`${S.priceContainer} mt-1 mb-1`}>
+                <p className="mr-2 text_type_digits-default">{card.price}</p>
                 <CurrencyIcon type="primary" />
               </div>
-              <h3 className="burger-element__name text_type_main-default">
+              <h3 className={`${S.burgerElement__name} text_type_main-default`}>
                 {card.name}
               </h3>
             </div>
           ))}
         </div>
-        <h3 className="burger-cards__name burger-cards__name_main text_type_main-medium mt-10 mb-6">
+        <h3 className={`${S.burgerIngridients__name} text_type_main-medium mt-10 mb-6`}>
           Начинки
         </h3>
-        <div className="burger-cards_main burger-cards">
+        <div className={`${S.burgerCards}`}>
           {props.main.map((card: any) => (
-            <div className="burger-element ml-4 mr-2 mt-6" onClick = {() => {props.onCardClick(card)}}>
-              <img className="ml-4" src={card.image} />
-              <div className="price-container mt-1 mb-1">
-                <p className="price-container__price mr-2 text_type_digits-default">{card.price}</p>
+            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+              <img className="ml-4" src={card.image} alt= 'картинка' />
+              <div className={`${S.priceContainer} mt-1 mb-1`}>
+                <p className=" mr-2 text_type_digits-default">{card.price}</p>
                 <CurrencyIcon type="primary" />
               </div>
-              <h3 className="burger-element__name text_type_main-default">
+              <h3 className={`${S.burgerElement__name} text_type_main-default`}>
                 {card.name}
               </h3>
             </div>

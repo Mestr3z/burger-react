@@ -1,13 +1,13 @@
-.burger-ingridients {
+.burgerIngridients {
     margin-left: 120px;
 }
 
-.burger-ingridients__tabs {
+.burgerIngridients__tabs {
     display: flex;
     flex-direction: row;
 }
 
-.price-container {
+.priceContainer {
     width: 272px;
     margin: 0;
     display: flex;
@@ -16,30 +16,30 @@
     align-items: center;
 }
 
-.burger-element {
+.burgerElement {
     width: 272px;
     margin: 0;
 
 }
 
-.burger-element__name {
+.burgerElement__name {
     margin: 0;
     width: 272px;
     height: 48px;
     text-align: center;
 }
 
-.burger-cards {
+.burgerCards {
     width: 600px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.burger-cards__name {
+.burgerCards__name {
     width: 600px;
 }
 
-.bugreg-cards__blocks{
+.burgerCards__blocks{
     height: 900px;
     overflow-y: scroll;
 }

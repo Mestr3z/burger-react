@@ -1,19 +1,19 @@
-.burger__constructor__main-block {
+.burgerConstructor__mainBlock {
     display: flex;
     flex-direction: column;
-    width: 629px;
     height: 656px;
     overflow-y: scroll;
+    gap: 10px;
 }
 
 
 .burger__constructor__card {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-left: 7px;
-    width: 600px;
+    width: 565px;
 
 }
 
@@ -56,10 +56,11 @@
     border-radius: 40px 40px 88px 88px;
 }
 
-.burger-constructor {
+.burgerConstructor {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    gap: 10px;
 }
 
 .burger__constructor_bun {
@@ -68,14 +69,14 @@
     height: 72px;
 }
 
-.burger__constructor__order{
+.burgerConstructor__order{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 
-.burger__constructor__oder-prices{
+.burgerConstructor__orderPrices{
     display: flex;
     flex-direction: row;
     align-items: center;
