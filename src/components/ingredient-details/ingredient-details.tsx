@@ -1,4 +1,3 @@
-
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import PropTypes from "prop-types";
 import S from "./ingredient-details.module.css"
@@ -6,13 +5,26 @@ import Modal from "../modal/modal";
 
 IngridientsDetails.propTypes = {
   onClose: PropTypes.func,
-  card: PropTypes.object,
+  card: PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    proteins:PropTypes.number,
+    fat: PropTypes.number,
+    carbohydrates: PropTypes.number,
+    calories: PropTypes.number,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    image_mobile: PropTypes.string,
+    image_large: PropTypes.string,
+    __v: PropTypes.number,
+  }),
   isOpen: PropTypes.bool,
 };
 
 function IngridientsDetails(props: any) {
   return (
-    <ModalOverlay isOpen={props.isOpen}>
+    <ModalOverlay isOpen={props.isOpen} onClose={props.onClose}>
       <Modal onClose={props.onClose}>
       <h2 className=" mt-15 ml-10 text_type_main-large">
         Детали ингредиента

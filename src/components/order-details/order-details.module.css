@@ -19,15 +19,3 @@
     background-image: url('../../images/graphics.svg');
     background-repeat: no-repeat;
 }
-
-.orderDetails__start {
-    margin: 0;
-}
-
-.oderDetails__wait {
-    margin-top: 0;
-}
-
-.orderDetails__code {
-    margin: 0;
-}

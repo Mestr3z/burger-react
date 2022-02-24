@@ -9,6 +9,8 @@ function getInitialCards() {
   }).then((res) => {
     if (res.ok) {
       return res.json();
+    } else {
+      return 
     }
   }).catch((err) => {
     console.log(err.code, err.message);

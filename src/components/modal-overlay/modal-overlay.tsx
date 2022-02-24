@@ -11,7 +11,7 @@ ModalOverlay.propTypes = {
 
 function ModalOverlay(props: any) {
   return ReactDom.createPortal (
-    <section
+    <section onClick={e => (e.currentTarget === e.target) && props.onClose()}
       className={`${S.overlay} ${props.isOpen ? S.overlay_isOpened : ""}`}
     >
      

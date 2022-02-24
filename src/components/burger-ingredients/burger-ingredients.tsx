@@ -3,10 +3,23 @@ import PropTypes from "prop-types";
 import { CurrencyIcon, Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import S from "./burger-ingredients.module.css"
 BurgerIngredients.propTypes = {
-  buns: PropTypes.array,
-  sauce: PropTypes.array,
-  main: PropTypes.array,
-  card: PropTypes.object,
+  buns: PropTypes.arrayOf(PropTypes.object),
+  sauce: PropTypes.arrayOf(PropTypes.object),
+  main: PropTypes.arrayOf(PropTypes.object),
+  card: PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    proteins:PropTypes.number,
+    fat: PropTypes.number,
+    carbohydrates: PropTypes.number,
+    calories: PropTypes.number,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    image_mobile: PropTypes.string,
+    image_large: PropTypes.string,
+    __v: PropTypes.number,
+  }),
   onCardClick: PropTypes.func,
 };
 

@@ -49,7 +49,6 @@ function App() {
     }
   }
 
-  // Функция handleEscClose и handleOverlayClose меняет значение стейта, но мы не можем передать стейт в компонент модал оверлей
 
   React.useEffect(() => {
     window.addEventListener("keydown", handleEscClose);
@@ -67,21 +66,19 @@ function App() {
 
       const bun = data.filter((card: any) => {
         if (card.type === "bun") {
+          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
           return card;
+          
         }
       });
       setBuns(bun);
 
-      const burgerConstructorCard = data.filter((card: any) => {
-        if (card.type === "sauce" || card.type === "main") {
-          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
-          return card;
-        }
-      });
+      
       setBurgerConstructorCards(data);
 
       const sauce = data.filter((card: any) => {
         if (card.type === "sauce") {
+          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
           return card;
         }
       });
@@ -90,6 +87,7 @@ function App() {
 
       const main = data.filter((card: any) => {
         if (card.type === "main") {
+          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
           return card;
         }
       });
@@ -123,5 +121,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

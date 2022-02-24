@@ -1,4 +1,3 @@
-
 import S from './order-details.module.css';
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import PropTypes from "prop-types";
@@ -11,7 +10,7 @@ OrderDetails.propTypes = {
   };
 
 function OrderDetails(props: any) {
-  return (<ModalOverlay isOpen = {props.isOpen}>
+  return (<ModalOverlay isOpen = {props.isOpen} onClose = {props.onClose}>
     <Modal onClose = {props.onClose}>
       <div className = {`${S.orderDetails__container} mb-8`}>
       <h2 className=" mt-30 mb-4 text_type_digits-large ">034536</h2>
