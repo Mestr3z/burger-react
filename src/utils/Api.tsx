@@ -10,7 +10,7 @@ function getInitialCards() {
     if (res.ok) {
       return res.json();
     } else {
-      return 
+      return Promise.reject(`Error: ${res.status}`)
     }
   }).catch((err) => {
     console.log(err.code, err.message);

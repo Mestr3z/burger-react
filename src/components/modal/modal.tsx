@@ -3,12 +3,12 @@ import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import S from "./modal.module.css";
 import PropTypes from "prop-types";
 
-Modal.propTypes = {
+modal.propTypes = {
   onClose: PropTypes.func,
   children: PropTypes.node,
 };
 
-function Modal(props: any) {
+function modal(props: any) {
   return (
     <section className={`${S.Modal} ${props.isOpen ? S.isOpen : ""}`}>
       <div className={`${S.modal__content} `}>
@@ -21,4 +21,4 @@ function Modal(props: any) {
   );
 }
 
-export default Modal;
+export default modal;

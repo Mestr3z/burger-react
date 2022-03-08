@@ -4,9 +4,8 @@ import AppHeader from "../app-header/app-header";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import getInitialCards from "../../utils/Api";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
-import ModalOverlay from "../modal-overlay/modal-overlay";
 import OrderDetails from "../order-details/oder-details";
-import IngridientsDetails from "../ingredient-details/ingredient-details";
+import IngredientsDetails from "../ingredient-details/ingredient-details";
 
 function App() {
   const [buns, setBuns] = React.useState([]);
@@ -66,13 +65,19 @@ function App() {
 
       const bun = data.filter((card: any) => {
         if (card.type === "bun") {
-          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
+          
           return card;
           
         }
       });
       setBuns(bun);
 
+      const initialValue = 0;
+      const sumWithInitial = data.reduce(
+        (previousValue: any, currentValue: any) => previousValue + currentValue.price,
+        initialValue
+      );
+      setBurgerCounstructorPrices(sumWithInitial);
       
       setBurgerConstructorCards(data);
 
@@ -113,7 +118,7 @@ function App() {
         />
       </div>
       <OrderDetails onClose={closeOverlay} isOpen={modalOverlayOrderOpen} />
-      <IngridientsDetails
+      <IngredientsDetails
         onClose={closeOverlay}
         card={selectedCard}
         isOpen={modalOverlayIngredientsOpen}
