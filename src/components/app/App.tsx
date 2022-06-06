@@ -36,28 +36,7 @@ function App() {
     setModalOverlayOrderOpen(false);
   }
 
-  function handleEscClose(evt: any) {
-    if (evt.key === "Escape") {
-      closeOverlay();
-    }
-  }
-
-  function handleOverlayClose(evt: any) {
-    if (evt.target.classList.contains("overlay")) {
-      closeOverlay();
-    }
-  }
-
-
-  React.useEffect(() => {
-    window.addEventListener("keydown", handleEscClose);
-    window.addEventListener("mousedown", handleOverlayClose);
-
-    return () => {
-      window.removeEventListener("keydown", handleEscClose);
-      window.removeEventListener("mousedown", handleOverlayClose);
-    };
-  });
+ 
 
   React.useEffect(() => {
     getInitialCards().then((res) => {
@@ -71,19 +50,24 @@ function App() {
         }
       });
       setBuns(bun);
-
-      const initialValue = 0;
-      const sumWithInitial = data.reduce(
-        (previousValue: any, currentValue: any) => previousValue + currentValue.price,
-        initialValue
-      );
+      console.log(data)
+      const sumWithInitial = data.filter((card: any) => {
+        if (card.type === "sauce" || card.type === "main") {
+          return card;
+        }
+      }).reduce(
+        (previousValue: any, currentValue: any) => {
+          console.log(currentValue.price);
+         return previousValue + currentValue.price
+        },
+        2510
+      );;
       setBurgerCounstructorPrices(sumWithInitial);
-      
+      console.log(sumWithInitial)
       setBurgerConstructorCards(data);
 
       const sauce = data.filter((card: any) => {
         if (card.type === "sauce") {
-          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
           return card;
         }
       });
@@ -92,7 +76,6 @@ function App() {
 
       const main = data.filter((card: any) => {
         if (card.type === "main") {
-          setBurgerCounstructorPrices(burgerCounstructorPrices + card.price);
           return card;
         }
       });
@@ -100,6 +83,7 @@ function App() {
       setMain(main);
     });
   }, []);
+
   React.useEffect(() => {}, []);
   return (
     <div className={`${S.main}`}>
