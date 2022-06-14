@@ -12,10 +12,10 @@ import {
 import {ingredientItem} from "../../utils/shared/ingredient-item"
 
 BurgerConstructor.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape(ingredientItem)),
+  data: PropTypes.arrayOf(PropTypes.shape(ingredientItem)).isRequired,
   card: PropTypes.shape(ingredientItem),
-  price: PropTypes.number,
-  onClick: PropTypes.func,
+  price: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 function BurgerConstructor(props: any) {
@@ -59,7 +59,7 @@ function BurgerConstructor(props: any) {
       </div>
       <div className={`${S.burgerConstructor__mainBlock} pr-2 custom-scroll`}>
         {mainCards.map((card: any) => (
-          <div className={`${S.burger__constructor__card}`}>
+          <div key={card._id} className={`${S.burger__constructor__card}`}>
             <DragIcon type="primary" />
             <ConstructorElement
               text={card.name}

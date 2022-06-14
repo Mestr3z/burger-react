@@ -5,13 +5,13 @@ import Modal from "../modal/modal";
 
 
 OrderDetails.propTypes = {
-    onClose: PropTypes.func,
-    isOpen: PropTypes.bool,
+    onClose: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
   };
 
 function OrderDetails(props: any) {
-  return (<ModalOverlay isOpen = {props.isOpen} onClose = {props.onClose}>
-    <Modal onClose = {props.onClose}>
+  return (
+    <Modal onClose={props.onClose} closeOverlay={props.onClose} isOpen={props.isOpen} >
       <div className = {`${S.orderDetails__container} mb-8`}>
       <h2 className=" mt-30 mb-4 text_type_digits-large ">034536</h2>
       <p className=" mb-15 mt-4 text_type_main-medium mb-15">идентификатор заказа</p>
@@ -20,7 +20,7 @@ function OrderDetails(props: any) {
       <p className = 'mt-1 mb-30 text_type_main-default text_color_inactive '>Дождитесь ответа на орбитальной станции</p>
       </div>
       </Modal>
-      </ModalOverlay>
+
   );
 }
 

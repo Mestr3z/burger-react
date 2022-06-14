@@ -81,7 +81,9 @@ function App() {
       });
 
       setMain(main);
-    });
+    }).catch((err) => {
+      console.log(`Ошибка: ${err}. Запрос не выполнен`);
+    });;
   }, []);
 
   React.useEffect(() => {}, []);

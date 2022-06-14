@@ -5,15 +5,15 @@ import Modal from "../modal/modal";
 import {ingredientItem} from "../../utils/shared/ingredient-item"
 
 IngredientsDetails.propTypes = {
-  onClose: PropTypes.func,
-  card: PropTypes.shape(ingredientItem),
-  isOpen: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  card: PropTypes.shape(ingredientItem).isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };
 
 function IngredientsDetails(props: any) {
   return (
-    <ModalOverlay isOpen={props.isOpen} onClose={props.onClose}>
-      <Modal onClose={props.onClose} closeOverlay={props.closeOverlay}>
+
+      <Modal onClose={props.onClose} closeOverlay={props.onClose} isOpen={props.isOpen}>
       <h2 className=" mt-15 ml-10 text_type_main-large">
         Детали ингредиента
       </h2>
@@ -52,7 +52,6 @@ function IngredientsDetails(props: any) {
         </div>
       </div>
       </Modal>
-    </ModalOverlay>
   );
 }
 

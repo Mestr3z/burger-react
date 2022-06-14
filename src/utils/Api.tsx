@@ -13,9 +13,7 @@ function getInitialCards() {
       }
       return res.json();
     })
-    .catch((err) => {
-      console.log(`Ошибка: ${err}. Запрос не выполнен`);
-    });
+    
 }
 
 export default getInitialCards;

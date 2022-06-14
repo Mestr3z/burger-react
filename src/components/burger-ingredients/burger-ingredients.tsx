@@ -5,11 +5,11 @@ import S from "./burger-ingredients.module.css"
 import {ingredientItem} from "../../utils/shared/ingredient-item"
 
 BurgerIngredients.propTypes = {
-  buns: PropTypes.arrayOf(PropTypes.shape(ingredientItem)),
-  sauce: PropTypes.arrayOf(PropTypes.shape(ingredientItem)),
-  main: PropTypes.arrayOf(PropTypes.shape(ingredientItem)),
+  buns: PropTypes.arrayOf(PropTypes.shape(ingredientItem)).isRequired,
+  sauce: PropTypes.arrayOf(PropTypes.shape(ingredientItem)).isRequired,
+  main: PropTypes.arrayOf(PropTypes.shape(ingredientItem)).isRequired,
   card: PropTypes.shape(ingredientItem),
-  onCardClick: PropTypes.func,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 function BurgerIngredients(props: any) {
@@ -34,7 +34,7 @@ function BurgerIngredients(props: any) {
         </h3>
         <div className={`${S.burgerCards}`}>
           {props.buns.map((card: any) => (
-            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+            <div key={card._id} className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
               <img className="ml-4" src={card.image} alt = 'картинка' />
               <div className={`${S.priceContainer} mt-1 mb-1`}>
                 <p className=" text_type_digits-default mr-2">{card.price}</p>
@@ -51,7 +51,7 @@ function BurgerIngredients(props: any) {
         </h3>
         <div className={`${S.burgerCards}`}>
           {props.sauce.map((card: any) => (
-            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+            <div key={card._id} className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
               <img className="ml-4" src={card.image} alt = 'картинка'/>
               <div className={`${S.priceContainer} mt-1 mb-1`}>
                 <p className="mr-2 text_type_digits-default">{card.price}</p>
@@ -68,7 +68,7 @@ function BurgerIngredients(props: any) {
         </h3>
         <div className={`${S.burgerCards}`}>
           {props.main.map((card: any) => (
-            <div className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
+            <div key={card._id} className={`${S.burgerElement} ml-4 mr-2 mt-6`} onClick = {() => {props.onCardClick(card)}}>
               <img className="ml-4" src={card.image} alt= 'картинка' />
               <div className={`${S.priceContainer} mt-1 mb-1`}>
                 <p className=" mr-2 text_type_digits-default">{card.price}</p>
