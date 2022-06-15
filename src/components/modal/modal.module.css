@@ -1,0 +1,24 @@
+.modal_isOpened{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.modal__content{
+    position: relative;
+    width:720px;
+    background-color: #1C1C21;
+    border: 1px solid rgba(76, 76, 255, 0.2);
+    border-radius: 40px;
+}
+
+.modal__closeButton{
+    position: absolute;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none; 
+    outline: none;
+    top: 68px;
+    right:40px;
+}

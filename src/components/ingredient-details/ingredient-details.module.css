@@ -1,0 +1,22 @@
+.ingredientsDetails__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingredientsDetails__healthContainer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.ingredientsDetails__health{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+p { 
+    margin:0;
+}

@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 88px;
+    justify-content: center;
+}
+
+.header__buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    margin-right: 112px;
+}
+
+.header__constructorButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__listButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__profileButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 289px;
+}
+
+
